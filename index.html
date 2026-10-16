@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bashayer Bamarhul | UI/UX & Frontend</title>
 <style>
   :root {
     --pink: #ffd6e8;
@@ -84,7 +84,7 @@
   .logo span { color: #e88fb0; }
   .nav-links {
     display: flex;
-    gap: 26px;
+    gap: 22px;
     list-style: none;
     align-items: center;
   }
@@ -291,6 +291,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 26px;
   }
+  .skills-grid .skill-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .skill-card {
     background: var(--white-glass-strong);
     border-radius: 24px;
@@ -371,7 +372,7 @@
     box-shadow: 0 12px 32px rgba(180,150,200,0.16);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     border: 1px solid rgba(255,255,255,0.6);
-    min-height: 230px;
+    min-height: 260px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -380,6 +381,9 @@
   .project-card.p1 { background: linear-gradient(150deg, #ffe3ef, #ffd6e8); }
   .project-card.p2 { background: linear-gradient(150deg, #e7f9f1, #c9f0e0); }
   .project-card.p3 { background: linear-gradient(150deg, #f0e7ff, #e0d4f7); }
+  .project-card.p4 { background: linear-gradient(150deg, #fff0e3, #ffe2c9); }
+  .project-card.p5 { background: linear-gradient(150deg, #e6f3ff, #cfe8ff); }
+  .project-card.p6 { background: linear-gradient(150deg, #ffe3ef, #f0e7ff); }
   .project-num {
     font-size: 2.4rem;
     font-weight: 800;
@@ -389,6 +393,38 @@
   }
   .project-card h3 { font-size: 1.2rem; color: var(--deep); margin-bottom: 10px; }
   .project-card p { font-size: 0.92rem; color: var(--text); line-height: 1.6; opacity: 0.85; }
+
+  a.project-card { text-decoration: none; color: inherit; cursor: pointer; }
+  .project-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #b481c9;
+    background: rgba(255,255,255,0.7);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .project-link {
+    margin-top: 18px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.25s ease;
+  }
+  a.project-card:hover .project-link { gap: 12px; color: #d46a98; }
+  .projects-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--deep-soft);
+    margin: 10px 0 22px;
+  }
+  .projects-grid + .projects-subtitle { margin-top: 50px; }
 
   .edu-lang-grid {
     display: grid;
@@ -404,7 +440,8 @@
   }
   .edu-card h3 { font-size: 1.25rem; color: var(--deep); margin-bottom: 6px; }
   .edu-card .school { font-weight: 700; color: #b481c9; margin-bottom: 4px; }
-  .edu-card .loc { color: var(--deep-soft); font-size: 0.92rem; margin-bottom: 10px; }
+  .edu-card .loc { color: var(--deep-soft); font-size: 0.92rem; margin-bottom: 4px; }
+  .edu-card .period { color: var(--deep-soft); font-size: 0.88rem; margin-bottom: 10px; }
   .edu-card .gpa { display:inline-block; font-size: 0.85rem; font-weight: 700; color: #2f7a5e; background: var(--mint); padding: 6px 14px; border-radius: 20px; margin-bottom: 22px; }
   .course-list { display: flex; flex-direction: column; gap: 10px; }
   .course-item {
@@ -494,7 +531,8 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="resume.pdf" class="nav-resume" download>Resume</a></li>
+      <li><a href="resume-uiux.pdf" class="nav-resume" download>UI/UX CV</a></li>
+      <li><a href="resume-frontend.pdf" class="nav-resume" download>Frontend CV</a></li>
     </ul>
   </div>
 </nav>
@@ -503,12 +541,13 @@
   <div class="container">
     <div class="hero-content">
       <div class="badge">✨ Available for new opportunities</div>
-      <h1>Hi, I'm Bashayer<br><span class="accent">Frontend Developer</span></h1>
-      <p class="role">Frontend Developer & UI/UX Designer</p>
-      <p class="desc">Computer Science graduate from King Abdulaziz University who builds responsive, semantic HTML5/CSS3 and JavaScript (ES6+) UI logic — grounded in a strong eye for wireframing, prototyping, and visual design in Figma. I bridge design and code, translating pixel-perfect mockups into clean, production-ready UI.</p>
+      <h1>Hi, I'm Bashayer<br><span class="accent">UI/UX & Frontend</span></h1>
+      <p class="role">UI/UX Specialist & Frontend Developer</p>
+      <p class="desc">Computer Science graduate (First Class Honors, GPA 5.0/5.0) from King Abdulaziz University. I design scalable Design Systems and end-to-end digital products in Figma, then build them as production-ready components with React, Next.js, TypeScript and Tailwind CSS. I bridge design and engineering, with accessibility (WCAG) built in.</p>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary">View My Work →</a>
-        <a href="resume.pdf" class="btn btn-outline" download>📄 Download Resume</a>
+        <a href="resume-uiux.pdf" class="btn btn-outline" download>🎨 UI/UX Resume</a>
+        <a href="resume-frontend.pdf" class="btn btn-outline" download>💻 Frontend Resume</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
       </div>
     </div>
@@ -522,9 +561,9 @@
     <h2 class="section-title reveal">About Me</h2>
     <div class="about-grid">
       <div class="about-card reveal">
-        <p>I'm a Computer Science graduate from King Abdulaziz University with hands-on experience building responsive, semantic HTML5/CSS3 and JavaScript (ES6+) UI logic. I have a strong understanding of frontend architecture and component-based design, and I'm skilled in wireframing, prototyping, and visual design using Figma — with a strong eye for usability, consistency, and clean interface design.</p>
+        <p>I'm a UI/UX Specialist and Software Engineer with a Computer Science degree from King Abdulaziz University (GPA 5.0/5.0, First Class Honors). I build and scale Design Systems, component libraries and typography systems using advanced Figma patterns, and I design end-to-end digital products with usability and accessibility at the core.</p>
         <br>
-        <p>What sets me apart is my technical understanding of how interfaces are actually built — I translate Figma mockups into pixel-perfect, reusable components, contribute to code reviews, and follow Agile workflows, making the handoff between design and development seamless.</p>
+        <p>What sets me apart is that I also write the code. I build with HTML5, CSS3, JavaScript (ES6+), React, Next.js, TypeScript and Tailwind CSS, so I translate designs into pixel-perfect, type-safe, reusable components and make the handoff between design and development seamless.</p>
       </div>
       <div class="info-pills reveal">
         <div class="pill-row">
@@ -537,7 +576,7 @@
         </div>
         <div class="pill-row">
           <div class="pill-icon peach">💼</div>
-          <div class="pill-text"><strong>Focus</strong><span>Frontend Development & UI/UX Design</span></div>
+          <div class="pill-text"><strong>Focus</strong><span>UI/UX Design, Design Systems & Frontend</span></div>
         </div>
         <div class="pill-row">
           <div class="pill-icon sky">🌐</div>
@@ -553,46 +592,97 @@
     <span class="section-tag reveal">What I bring</span>
     <h2 class="section-title reveal">Skills & Tools</h2>
     <div class="skills-grid">
+
       <div class="skill-card reveal">
-        <h3><span class="dot" style="background:#e88fb0"></span>UI/UX Design</h3>
+        <h3><span class="dot" style="background:#e88fb0"></span>UI/UX & Product Design</h3>
         <div class="tag-list">
           <span class="tag" style="background:var(--pink)">Figma</span>
+          <span class="tag" style="background:var(--pink)">End-to-End UI/UX</span>
           <span class="tag" style="background:var(--pink)">Wireframing</span>
           <span class="tag" style="background:var(--pink)">Prototyping</span>
           <span class="tag" style="background:var(--pink)">Visual & Interaction Design</span>
           <span class="tag" style="background:var(--pink)">Responsive Design</span>
+          <span class="tag" style="background:var(--pink)">Typography</span>
           <span class="tag" style="background:var(--pink)">Usability</span>
           <span class="tag" style="background:var(--pink)">Canva</span>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <h3><span class="dot" style="background:#7ab89c"></span>Design Process</h3>
+        <h3><span class="dot" style="background:#b79be0"></span>Design Systems & Architecture</h3>
         <div class="tag-list">
-          <span class="tag" style="background:var(--mint)">User-Centered Design</span>
-          <span class="tag" style="background:var(--mint)">Design Consistency</span>
-          <span class="tag" style="background:var(--mint)">Design-to-Dev Handoff</span>
-          <span class="tag" style="background:var(--mint)">WCAG Accessibility</span>
+          <span class="tag" style="background:var(--lavender)">Design Systems</span>
+          <span class="tag" style="background:var(--lavender)">Component Libraries</span>
+          <span class="tag" style="background:var(--lavender)">Design Tokens</span>
+          <span class="tag" style="background:var(--lavender)">Variants</span>
+          <span class="tag" style="background:var(--lavender)">Governance</span>
+          <span class="tag" style="background:var(--lavender)">Documentation</span>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <h3><span class="dot" style="background:#c9a14a"></span>Technical Knowledge</h3>
+        <h3><span class="dot" style="background:#c9a14a"></span>Frontend Development</h3>
         <div class="tag-list">
           <span class="tag" style="background:var(--peach)">HTML5</span>
           <span class="tag" style="background:var(--peach)">CSS3</span>
           <span class="tag" style="background:var(--peach)">JavaScript (ES6+)</span>
+          <span class="tag" style="background:var(--peach)">React</span>
+          <span class="tag" style="background:var(--peach)">Next.js</span>
+          <span class="tag" style="background:var(--peach)">TypeScript</span>
           <span class="tag" style="background:var(--peach)">Tailwind CSS</span>
+          <span class="tag" style="background:var(--peach)">Material UI</span>
+          <span class="tag" style="background:var(--peach)">Redux</span>
+          <span class="tag" style="background:var(--peach)">Flux</span>
+          <span class="tag" style="background:var(--peach)">React Hooks</span>
         </div>
       </div>
+
       <div class="skill-card reveal">
-        <h3><span class="dot" style="background:#6a9fc9"></span>Tools & Methods</h3>
+        <h3><span class="dot" style="background:#8fd6c4"></span>Backend & DevOps</h3>
         <div class="tag-list">
-          <span class="tag" style="background:var(--sky)">Git</span>
-          <span class="tag" style="background:var(--sky)">GitHub</span>
-          <span class="tag" style="background:var(--sky)">Agile</span>
-          <span class="tag" style="background:var(--sky)">Technical Writing</span>
-          <span class="tag" style="background:var(--sky)">Problem Solving</span>
+          <span class="tag" style="background:var(--mint)">Node.js</span>
+          <span class="tag" style="background:var(--mint)">NestJS</span>
+          <span class="tag" style="background:var(--mint)">PHP (Laravel)</span>
+          <span class="tag" style="background:var(--mint)">REST APIs</span>
+          <span class="tag" style="background:var(--mint)">Docker</span>
+          <span class="tag" style="background:var(--mint)">CI/CD</span>
+          <span class="tag" style="background:var(--mint)">GitLab</span>
+          <span class="tag" style="background:var(--mint)">Linux & Bash</span>
         </div>
       </div>
+
+      <div class="skill-card reveal">
+        <h3><span class="dot" style="background:#7ab89c"></span>Design-to-Code Collaboration</h3>
+        <div class="tag-list">
+          <span class="tag" style="background:var(--mint)">Developer Handoff</span>
+          <span class="tag" style="background:var(--mint)">Production-Ready Components</span>
+          <span class="tag" style="background:var(--mint)">WCAG Accessibility</span>
+          <span class="tag" style="background:var(--mint)">User-Centered Design</span>
+          <span class="tag" style="background:var(--mint)">Design Consistency</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h3><span class="dot" style="background:#6a9fc9"></span>Strategy & Operations</h3>
+        <div class="tag-list">
+          <span class="tag" style="background:var(--sky)">Agile/Scrum</span>
+          <span class="tag" style="background:var(--sky)">Stakeholder Management</span>
+          <span class="tag" style="background:var(--sky)">Cross-functional Training</span>
+          <span class="tag" style="background:var(--sky)">Design Adoption Tracking</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h3><span class="dot" style="background:#d9a8ec"></span>Tools & Methods</h3>
+        <div class="tag-list">
+          <span class="tag" style="background:var(--pink)">Git</span>
+          <span class="tag" style="background:var(--pink)">GitHub</span>
+          <span class="tag" style="background:var(--pink)">SDLC</span>
+          <span class="tag" style="background:var(--pink)">Technical Writing</span>
+          <span class="tag" style="background:var(--pink)">Problem Solving</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -606,13 +696,15 @@
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="date">May 2025 – Jul 2025</div>
-          <h3>Frontend Development Trainee</h3>
+          <h3>Frontend Development Intern</h3>
           <div class="company">Nexcore — Jeddah, Saudi Arabia</div>
           <ul>
-            <li>Built responsive, semantic HTML/CSS components with Tailwind CSS; ensured cross-browser compatibility and design-spec adherence</li>
-            <li>Translated Figma mockups into pixel-perfect, reusable components on a live production site</li>
-            <li>Debugged cross-device/browser UI issues; contributed to code reviews and Agile handoffs</li>
-            <li>Applied WCAG accessibility and SEO-friendly markup standards</li>
+            <li>Engineered 30+ type-safe components using React/Next.js, keeping UI design patterns aligned with production code</li>
+            <li>Built responsive, semantic HTML/CSS with Tailwind CSS and translated Figma mockups into pixel-perfect, reusable components on a live production site</li>
+            <li>Implemented state management with React Hooks (useState, useContext) alongside Redux / Flux patterns for scalable data flow</li>
+            <li>Optimized web performance and maintained design consistency across responsive layouts; debugged cross-device/browser issues</li>
+            <li>Researched user stories to define technical specs and wrote clear design-to-development documentation</li>
+            <li>Contributed to code reviews, applied WCAG and SEO-friendly markup, and tracked sprint deliverables with distributed teams</li>
           </ul>
         </div>
       </div>
@@ -624,28 +716,75 @@
   <div class="container">
     <span class="section-tag reveal">Selected work</span>
     <h2 class="section-title reveal">Projects</h2>
+
+    <h3 class="projects-subtitle reveal">🎨 UI/UX Design Projects</h3>
     <div class="projects-grid">
-      <div class="project-card p1 reveal">
+
+      <a href="https://www.figma.com/design/qx0cYQP57dd9OT52GxjaU8/Base360-Landing-Page-%E2%80%94-Bashayer-Bamarhul?t=skocl65y6slDdXH6-1" target="_blank" rel="noopener" class="project-card p1 reveal">
         <div>
           <div class="project-num">01</div>
-          <h3>E-commerce Website UI</h3>
-          <p>Responsive interface (HTML/CSS/JS) built with vanilla JS DOM manipulation, tested across devices.</p>
+          <span class="project-tag">UI/UX · Figma</span>
+          <h3>Base360 & Brand Collateral</h3>
+          <p>End-to-end design of landing pages and brand collateral. I built responsive layouts in Figma using advanced design patterns, a consistent visual language, and modern visual standards, ready for handoff to developers.</p>
         </div>
-      </div>
-      <div class="project-card p2 reveal">
+        <span class="project-link">View design ↗</span>
+      </a>
+
+      <a href="https://www.figma.com/design/wqj7AIFhDiLEuF1x6dc6ZP/Company-Landing-Page---Admin-Dashboard?t=skocl65y6slDdXH6-1" target="_blank" rel="noopener" class="project-card p2 reveal">
         <div>
           <div class="project-num">02</div>
-          <h3>Nexcore Website</h3>
-          <p>Semantic, component-based HTML/CSS built from Figma designs, optimized for consistency and performance.</p>
+          <span class="project-tag">UI/UX · Dashboard</span>
+          <h3>Company Profile & Admin Dashboard</h3>
+          <p>A corporate website paired with an admin dashboard that simplifies internal system workflows. It comes with stakeholder presentations and clear handoff documentation for the development team.</p>
         </div>
-      </div>
-      <div class="project-card p3 reveal">
+        <span class="project-link">View design ↗</span>
+      </a>
+
+      <a href="https://www.figma.com/design/ulULQ5CvJV4WntJIFQhSI6/%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%A8%D8%B4%D8%A7%D8%A6%D8%B1-%D9%84%D9%84%D8%B9%D9%82%D9%88%D8%AF?node-id=0-1&t=skocl65y6slDdXH6-1" target="_blank" rel="noopener" class="project-card p3 reveal">
         <div>
           <div class="project-num">03</div>
-          <h3>Solen Website</h3>
-          <p>Responsive, accessible interface with consistent cross-browser design.</p>
+          <span class="project-tag">UI/UX · Web Platform</span>
+          <h3>Electronic Contracts Platform</h3>
+          <p>Complete interfaces and interactive workflows for a digital contract management platform: creating, reviewing and signing contracts, with scope, timelines and deliverables managed to client requirements.</p>
         </div>
-      </div>
+        <span class="project-link">View design ↗</span>
+      </a>
+
+    </div>
+
+    <h3 class="projects-subtitle reveal">💻 Frontend Projects</h3>
+    <div class="projects-grid">
+
+      <a href="https://mubram.sa/en" target="_blank" rel="noopener" class="project-card p4 reveal">
+        <div>
+          <div class="project-num">04</div>
+          <span class="project-tag">React · TypeScript · Tailwind</span>
+          <h3>Mubram Platform</h3>
+          <p>The component-based frontend for the contracts platform, with complex contract workflows, secure forms and optimized UI components.</p>
+        </div>
+        <span class="project-link">View project ↗</span>
+      </a>
+
+      <a href="https://nexcore.sa/en" target="_blank" rel="noopener" class="project-card p5 reveal">
+        <div>
+          <div class="project-num">05</div>
+          <span class="project-tag">React · Tailwind</span>
+          <h3>Nexcore Company Website</h3>
+          <p>Reusable UI components and interactive sections built from Figma designs, focused on cross-platform consistency and performance.</p>
+        </div>
+        <span class="project-link">View project ↗</span>
+      </a>
+
+      <a href="https://soln.sa/" target="_blank" rel="noopener" class="project-card p6 reveal">
+        <div>
+          <div class="project-num">06</div>
+          <span class="project-tag">HTML · CSS · WCAG 2.1</span>
+          <h3>Solen Website</h3>
+          <p>A fully responsive, WCAG 2.1 accessible frontend that works across screen sizes, using modern CSS optimization techniques.</p>
+        </div>
+        <span class="project-link">View project ↗</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -659,10 +798,14 @@
         <h3>Bachelor of Computer Science</h3>
         <div class="school">King Abdulaziz University</div>
         <div class="loc">Jeddah, Kingdom of Saudi Arabia</div>
-        <div class="gpa">GPA: 5.0/5.0</div>
+        <div class="period">01/2022 – 06/2026</div>
+        <div class="gpa">GPA: 5.0/5.0 · First Class Honors / First Rank</div>
         <div class="course-list">
           <div class="course-item"><span class="check">✓</span> UX Research & Planning — Tuwaiq Academy</div>
           <div class="course-item"><span class="check">✓</span> UI/UX Design — Tuwaiq Academy</div>
+          <div class="course-item"><span class="check">✓</span> Advanced Figma & Design Systems</div>
+          <div class="course-item"><span class="check">✓</span> React & TypeScript Fundamentals</div>
+          <div class="course-item"><span class="check">✓</span> Agile Methodologies & SDLC</div>
           <div class="course-item"><span class="check">✓</span> Tailwind CSS — Udemy</div>
           <div class="course-item"><span class="check">✓</span> HTML, CSS & JavaScript — Satr</div>
           <div class="course-item"><span class="check">✓</span> Bootstrap Framework — Satr</div>
@@ -692,7 +835,8 @@
         <a href="mailto:bashayerbamarhul@gmail.com" class="contact-method">✉️ bashayerbamarhul@gmail.com</a>
         <a href="tel:+966530053659" class="contact-method">📱 +966 53 005 3659</a>
         <a href="https://your-portfolio-link-here.com" class="contact-method">🔗 Portfolio</a>
-        <a href="resume.pdf" class="contact-method" download>📄 Download Resume</a>
+        <a href="resume-uiux.pdf" class="contact-method" download>🎨 UI/UX Resume</a>
+        <a href="resume-frontend.pdf" class="contact-method" download>💻 Frontend Resume</a>
         <span class="contact-method">📍 Jeddah, Saudi Arabia</span>
       </div>
     </div>
